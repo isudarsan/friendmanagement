@@ -1,0 +1,52 @@
+/target/
+!.mvn/wrapper/maven-wrapper.jar
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+/nbproject/private/
+/build/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+#Intellij project files
+**/.idea/
+*.iml
+
+#Eclipse project files
+**/.project
+**/.classpath
+**/.settings/
+
+#Added this, because the above doesn't seem to work in my Eclipse
+*.class
+*.project
+*.settings
+*.classpath
+*.metadata
+
+
+
+#Generated Maven files
+**/release.properties
+**/pom.xml.releaseBackup
+**/pom.xml.releaseVersions
+
+**/.DS_Store
+*/target/*
+*/target/**
