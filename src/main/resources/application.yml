@@ -1,11 +1,5 @@
-spring:
-  jpa:    
-    show-sql: true
-    hibernate:
-      ddl-auto: create-drop
-
 db.username: root
 db.password: root
-db.url: jdbc:mysql://localhost:3306/friends_db?autoReconnect=true&useSSL=false
+db.url: jdbc:mysql://localhost:3306/friend_management?autoReconnect=true&useSSL=false
 db.driver: com.mysql.jdbc.Driver
-db.dialect: org.hibernate.dialect.MySQL5Dialect
+db.dialect: org.hibernate.dialect.MySQL5InnoDBDialect
