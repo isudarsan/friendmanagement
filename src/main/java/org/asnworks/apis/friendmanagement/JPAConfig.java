@@ -3,14 +3,11 @@
  */
 package org.asnworks.apis.friendmanagement;
 
-import javax.sql.DataSource;
-
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
-import org.springframework.orm.jpa.JpaVendorAdapter;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 
@@ -18,7 +15,7 @@ import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
  * @author sudambat
  */
 @Configuration
-@EnableJpaRepositories("")
+@EnableJpaRepositories("org.asnworks.apis.friendmanagement.repo")
 public class JPAConfig {
 
     @Value("${db.username}")
@@ -36,24 +33,36 @@ public class JPAConfig {
     @Value("${db.dialect}")
     String dialect;
 
-    @Bean
-    public DataSource dataSource() {
-        DriverManagerDataSource dataSource = new DriverManagerDataSource();
-        dataSource.setDriverClassName(driver);
-        dataSource.setUrl(url);
-        dataSource.setUsername(userName);
-        dataSource.setPassword(password);
-        return dataSource;
+    /**
+     * @return
+     */
+    @Bean(name = "datasource")
+    public DriverManagerDataSource getDriverManagerDataSource() {
+        DriverManagerDataSource driverManagerDataSource =
+            new DriverManagerDataSource();
+        driverManagerDataSource.setUsername(userName);
+        driverManagerDataSource.setPassword(password);
+        driverManagerDataSource.setUrl(url);
+        driverManagerDataSource.setDriverClassName(driver);
+        return driverManagerDataSource;
     }
 
-    @Bean
-    public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
-        LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
-        em.setDataSource(dataSource());
-        em.setPackagesToScan(new String[] {"org.asnworks.apis.friendmanagement.domain"});
-        JpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
-        em.setJpaVendorAdapter(vendorAdapter);
-        return em;
+    /**
+     * @return
+     */
+    @Bean(name = "entityManagerFactory")
+    public LocalContainerEntityManagerFactoryBean getLocalContainerEntityManagerFactoryBean() {
+        LocalContainerEntityManagerFactoryBean emf =
+            new LocalContainerEntityManagerFactoryBean();
+        HibernateJpaVendorAdapter vendor =
+            new HibernateJpaVendorAdapter();
+        vendor.setShowSql(true);
+        vendor.setGenerateDdl(true);
+        vendor.setDatabasePlatform(dialect);
+        emf.setJpaVendorAdapter(vendor);
+        emf.setDataSource(getDriverManagerDataSource());
+        emf.setPackagesToScan("org.asnworks.apis.friendmanagement.domain");
+        return emf;
     }
 
 }
