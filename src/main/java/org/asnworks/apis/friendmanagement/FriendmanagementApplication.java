@@ -7,17 +7,19 @@ import org.springframework.context.annotation.Import;
 /**
  * @author sudambat
  */
+
 @SpringBootApplication
 @Import({
 
     JPAConfig.class,
     ServiceConfig.class,
+    SwaggerConfig.class
 
 })
 
 public class FriendmanagementApplication {
-
     public static void main(String[] args) {
+
         SpringApplication.run(FriendmanagementApplication.class, args);
     }
 

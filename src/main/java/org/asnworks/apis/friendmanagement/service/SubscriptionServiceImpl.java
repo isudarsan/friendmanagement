@@ -7,8 +7,12 @@ import java.util.List;
 
 import org.asnworks.apis.friendmanagement.domain.Subscription;
 import org.asnworks.apis.friendmanagement.dto.ToggleSubscriptionDTO;
+import org.asnworks.apis.friendmanagement.exceptions.DuplicateSubscriptionRequest;
+import org.asnworks.apis.friendmanagement.exceptions.InvalidRequestException;
 import org.asnworks.apis.friendmanagement.repo.SubscribeRepository;
 import org.asnworks.apis.friendmanagement.utils.ValidationUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,6 +22,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class SubscriptionServiceImpl implements SubscriptionService {
 
+    private static final Logger LOG = LoggerFactory.getLogger(SubscriptionServiceImpl.class);
     @Autowired
     SubscribeRepository subscribeRepository;
 
@@ -26,13 +31,17 @@ public class SubscriptionServiceImpl implements SubscriptionService {
 
     @Override
     public void scubscribe(final ToggleSubscriptionDTO toggleSubscriptionDTO) {
+        LOG.info("Start :: scubscribe {} {}", toggleSubscriptionDTO.getRequestor(), toggleSubscriptionDTO.getTarget());
         checkSubscriptionCriteria(toggleSubscriptionDTO.getRequestor(), toggleSubscriptionDTO.getTarget());
+        LOG.info("End :: scubscribe {} {}", toggleSubscriptionDTO.getRequestor(), toggleSubscriptionDTO.getTarget());
 
     }
 
     private void checkSubscriptionCriteria(final String requestor, final String target) {
+        LOG.info("Start :: checkSubscriptionCriteria {} {}", requestor, target);
         if (requestor == null || target == null) {
-            // throw WrongRequestFormatException("Must have fields 'requestor' and 'target'");
+            LOG.info("InvalidRequestException :: checkSubscriptionCriteria {} {}", requestor, target);
+            throw new InvalidRequestException("Invalid request : should have requestor and target");
         }
 
         validationUtils.validateFriendShipCriteria(requestor, target);
@@ -40,10 +49,12 @@ public class SubscriptionServiceImpl implements SubscriptionService {
         List<String> targetSubscribers = subscribeRepository.fetchSubscribers(target);
 
         if (targetSubscribers.contains(requestor)) {
-            System.out.println("Already subscribed exception");
+            LOG.info("DuplicateSubscriptionRequest :: checkSubscriptionCriteria {} {}", requestor, target);
+            throw new DuplicateSubscriptionRequest(requestor, target);
         }
 
         subscribeRepository.save(createSubscription(requestor, target));
+        LOG.info("End :: checkSubscriptionCriteria {} {}", requestor, target);
 
     }
 

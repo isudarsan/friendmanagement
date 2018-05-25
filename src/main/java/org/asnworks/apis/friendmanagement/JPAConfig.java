@@ -3,6 +3,7 @@
  */
 package org.asnworks.apis.friendmanagement;
 
+import org.asnworks.apis.friendmanagement.constants.Constants;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -10,12 +11,11 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
-
 /**
  * @author sudambat
  */
 @Configuration
-@EnableJpaRepositories("org.asnworks.apis.friendmanagement.repo")
+@EnableJpaRepositories(Constants.JPA_REPO_PACKAGE)
 public class JPAConfig {
 
     @Value("${db.username}")
@@ -61,7 +61,7 @@ public class JPAConfig {
         vendor.setDatabasePlatform(dialect);
         emf.setJpaVendorAdapter(vendor);
         emf.setDataSource(getDriverManagerDataSource());
-        emf.setPackagesToScan("org.asnworks.apis.friendmanagement.domain");
+        emf.setPackagesToScan(Constants.ENTITY_SCAN_PACKAGE);
         return emf;
     }
 

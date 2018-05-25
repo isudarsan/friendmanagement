@@ -5,8 +5,6 @@ package org.asnworks.apis.friendmanagement.dto;
 
 import java.util.List;
 
-import org.springframework.http.HttpStatus;
-
 /**
  * @author sudambat
  */
@@ -16,7 +14,7 @@ public class FriendsResponseDTO extends ApiResponseDTO {
     private int count;
 
     public FriendsResponseDTO(List<String> friends) {
-        super(true, HttpStatus.OK);
+        super(true);
         this.friends = friends;
         this.count = friends.size();
     }

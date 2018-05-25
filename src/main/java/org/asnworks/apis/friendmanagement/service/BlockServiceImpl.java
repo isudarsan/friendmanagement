@@ -7,8 +7,12 @@ import java.util.List;
 
 import org.asnworks.apis.friendmanagement.domain.Block;
 import org.asnworks.apis.friendmanagement.dto.ToggleSubscriptionDTO;
+import org.asnworks.apis.friendmanagement.exceptions.FriendBlockedException;
+import org.asnworks.apis.friendmanagement.exceptions.InvalidRequestException;
 import org.asnworks.apis.friendmanagement.repo.BlockRepository;
 import org.asnworks.apis.friendmanagement.utils.ValidationUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,6 +22,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class BlockServiceImpl implements BlockService {
 
+    private static final Logger LOG = LoggerFactory.getLogger(BlockServiceImpl.class);
     @Autowired
     ValidationUtils validationUtils;
 
@@ -30,7 +35,9 @@ public class BlockServiceImpl implements BlockService {
      */
     @Override
     public void block(ToggleSubscriptionDTO toggleSubscriptionDTO) {
+        LOG.info("Start :: block {} {}", toggleSubscriptionDTO.getRequestor(), toggleSubscriptionDTO.getTarget());
         checkBlockCriteria(toggleSubscriptionDTO.getRequestor(), toggleSubscriptionDTO.getTarget());
+        LOG.info("End :: block {} {}", toggleSubscriptionDTO.getRequestor(), toggleSubscriptionDTO.getTarget());
 
     }
 
@@ -39,8 +46,9 @@ public class BlockServiceImpl implements BlockService {
      * @param target
      */
     private void checkBlockCriteria(final String requestor, final String target) {
+        LOG.info("Start :: checkBlockCriteria {} {}", requestor, target);
         if (requestor == null || target == null) {
-            // throw WrongRequestFormatException("Must have fields 'requestor' and 'target'");
+            throw new InvalidRequestException("Invalid request : should have requestor and target");
         }
 
         validationUtils.validateFriendShipCriteria(requestor, target);
@@ -48,10 +56,12 @@ public class BlockServiceImpl implements BlockService {
         List<String> targetBlockers = blockRepository.fetchBlockers(target);
 
         if (targetBlockers.contains(requestor)) {
-            // throw new AlreadyBlockedException(requestor, target);
+            LOG.info("FriendBlockedException :: checkBlockCriteria {} {}", requestor, target);
+            throw new FriendBlockedException(requestor, target);
         }
 
         blockRepository.save(createBlock(requestor, target));
+        LOG.info("End :: checkBlockCriteria {} {}", requestor, target);
 
     }
 

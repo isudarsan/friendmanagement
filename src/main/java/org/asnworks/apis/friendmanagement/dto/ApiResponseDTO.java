@@ -3,24 +3,23 @@
  */
 package org.asnworks.apis.friendmanagement.dto;
 
-import org.springframework.http.HttpStatus;
-
 /**
  * @author sudambat
  */
 public class ApiResponseDTO {
 
-    private final boolean success;
-    private int httpStatusCode;
+    private boolean success;
 
-    public ApiResponseDTO(boolean success, HttpStatus httpStatus) {
+    public ApiResponseDTO(boolean success) {
         this.success = success;
-        this.httpStatusCode = httpStatus.value();
     }
 
     public boolean isSuccess() {
         return success;
     }
 
+    public void setSuccess(boolean success) {
+        this.success = success;
+    }
 
 }
