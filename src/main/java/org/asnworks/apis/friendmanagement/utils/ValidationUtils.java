@@ -9,6 +9,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import org.asnworks.apis.friendmanagement.constants.Constants;
+import org.asnworks.apis.friendmanagement.exceptions.InvalidEmailException;
 import org.asnworks.apis.friendmanagement.exceptions.InvalidUserexception;
 import org.asnworks.apis.friendmanagement.exceptions.UserDoesNotExistsException;
 import org.asnworks.apis.friendmanagement.repo.UserProfileRepository;
@@ -49,6 +50,10 @@ public class ValidationUtils {
      */
     public void validatePerson(final String person) {
         LOG.info("Start :: validatePerson :: {}", person);
+        if (!isValidEmail(person)) {
+            LOG.info("InvalidEmailException :: validatePerson :: {}", person);
+            throw new InvalidEmailException(person);
+        }
         if (userProfileRepository.findById(person) == null) {
             LOG.info("UserDoesNotExistsException :: validatePerson :: {}", person);
             throw new UserDoesNotExistsException(person);
@@ -69,5 +74,18 @@ public class ValidationUtils {
         }
         LOG.info("End :: extractMailsFromText :: {}", email);
         return extractedEmails;
+    }
+
+    /**
+     * @param email
+     * @return
+     */
+    public boolean isValidEmail(final String email) {
+        LOG.info("Start :: isValidEmail :: {}", email);
+        Pattern pattern = Pattern.compile(Constants.VALID_EMAIL_REGEX);
+        Matcher matcher = pattern.matcher(email);
+        boolean flag = matcher.matches();
+        LOG.info("End :: isValidEmail :: {}", email);
+        return flag;
     }
 }

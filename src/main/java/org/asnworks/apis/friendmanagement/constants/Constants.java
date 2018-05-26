@@ -19,4 +19,8 @@ public class Constants {
     public static final String UNKNOWN_ERROR_CODE = "5000";
 
     public static final String UNKNOWN_ERROR_MESSAGE = "Unknown Error";
+
+    public static final String VALID_EMAIL_REGEX =
+        "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
+            + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
 }
