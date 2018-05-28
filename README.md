@@ -12,6 +12,14 @@ http://ec2-18-216-161-170.us-east-2.compute.amazonaws.com:8080/firendsapi/friend
 
 Swagger UI is configured for the app and it is available: http://ec2-18-216-161-170.us-east-2.compute.amazonaws.com:8080/swagger-ui.html
 
+### Deployment to AWS-EC2
+
+Jenkins is configured on EC2 to build and deploy snapshots for the friendmanagement micro service.Trigger the below job so that it will automatically deploy and run the microservice on EC2.
+
+http://ec2-18-216-161-170.us-east-2.compute.amazonaws.com:9090/job/RELEASE_FRIEND_MGMT/
+
+Credentials : sudarsan/cg@123
+
 ### List of REST Endpoints and Explanation
 
 1. Returns a list of friends of a person.
