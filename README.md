@@ -8,7 +8,7 @@ http://ec2-18-216-161-170.us-east-2.compute.amazonaws.com:8080
 
 For example: To access `/firends` endpoint, the URL should be:
 
-http://ec2-18-216-161-170.us-east-2.compute.amazonaws.com:8080/friendsapi/friends
+http://ec2-18-216-161-170.us-east-2.compute.amazonaws.com:8080/firendsapi/friends
 
 Swagger UI is configured for the app and it is available: http://ec2-18-216-161-170.us-east-2.compute.amazonaws.com:8080/swagger-ui.html
 
