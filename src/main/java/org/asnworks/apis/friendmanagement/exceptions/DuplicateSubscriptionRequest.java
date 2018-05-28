@@ -3,6 +3,8 @@
  */
 package org.asnworks.apis.friendmanagement.exceptions;
 
+import org.asnworks.apis.friendmanagement.constants.Constants;
+
 /**
  * @author sudambat
  */
@@ -17,6 +19,6 @@ public class DuplicateSubscriptionRequest extends BaseException {
 
     @Override
     public String getExceptionErrorCode() {
-        return "40003";
+        return Constants.DUPLICATE_SUBSCRIPTION_ERROR_CODE;
     }
 }

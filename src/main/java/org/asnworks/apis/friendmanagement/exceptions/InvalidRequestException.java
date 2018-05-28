@@ -3,6 +3,8 @@
  */
 package org.asnworks.apis.friendmanagement.exceptions;
 
+import org.asnworks.apis.friendmanagement.constants.Constants;
+
 /**
  * @author sudambat
  */
@@ -16,7 +18,7 @@ public class InvalidRequestException extends BaseException {
 
     @Override
     public String getExceptionErrorCode() {
-        return "4000";
+        return Constants.INVALID_REQUEST_ERROR_CODE;
     }
 
 

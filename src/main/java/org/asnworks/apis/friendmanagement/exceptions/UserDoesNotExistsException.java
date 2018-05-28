@@ -3,6 +3,7 @@
  */
 package org.asnworks.apis.friendmanagement.exceptions;
 
+import org.asnworks.apis.friendmanagement.constants.Constants;
 
 /**
  * @author sudambat
@@ -18,7 +19,7 @@ public class UserDoesNotExistsException extends BaseException {
 
     @Override
     public String getExceptionErrorCode() {
-        return "40005";
+        return Constants.USER_DOES_NOT_EXISTS_ERROR_CODE;
     }
 
 }

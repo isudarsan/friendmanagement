@@ -3,6 +3,7 @@
  */
 package org.asnworks.apis.friendmanagement.exceptions;
 
+import org.asnworks.apis.friendmanagement.constants.Constants;
 
 /**
  * @author sudambat
@@ -19,7 +20,7 @@ public class InvalidEmailException extends BaseException {
 
     @Override
     public String getExceptionErrorCode() {
-        return "40006";
+        return Constants.INVALID_EMAIL_ERROR_CODE;
     }
 
 }

@@ -3,6 +3,7 @@
  */
 package org.asnworks.apis.friendmanagement.exceptions;
 
+import org.asnworks.apis.friendmanagement.constants.Constants;
 
 /**
  * @author sudambat
@@ -22,7 +23,7 @@ public class FriendBlockedException extends BaseException {
 
     @Override
     public String getExceptionErrorCode() {
-        return "40002";
+        return Constants.FRIEND_BLOCKED_ERROR_CODE;
     }
 
 }

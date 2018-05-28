@@ -3,6 +3,7 @@
  */
 package org.asnworks.apis.friendmanagement.exceptions;
 
+import org.asnworks.apis.friendmanagement.constants.Constants;
 
 /**
  * @author sudambat
@@ -19,7 +20,7 @@ public class InvalidUserexception extends BaseException {
 
     @Override
     public String getExceptionErrorCode() {
-        return "40004";
+        return Constants.INVALID_USER_ERROR_CODE;
     }
 
 }

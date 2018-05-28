@@ -3,6 +3,7 @@
  */
 package org.asnworks.apis.friendmanagement.exceptions;
 
+import org.asnworks.apis.friendmanagement.constants.Constants;
 
 /**
  * @author sudambat
@@ -22,7 +23,7 @@ public class DuplicateInvitaionException extends BaseException {
 
     @Override
     public String getExceptionErrorCode() {
-        return "40001";
+        return Constants.DUPLICATE_INVITATION_ERROR_CODE;
     }
 
 }
