@@ -6,6 +6,10 @@ Usually, the application compraised of features like "Friend", "Unfriend", "Bloc
 The Application is deployed on AWS - EC2 instance.It can be accessed via the below url and the path for all the api is `/firendsapi`
 http://ec2-18-216-161-170.us-east-2.compute.amazonaws.com:8080
 
+For example: To access `/firends` endpoint, the URL should be:
+
+http://ec2-18-216-161-170.us-east-2.compute.amazonaws.com:8080/friendsapi/friends
+
 Swagger UI is configured for the app and it is available: http://ec2-18-216-161-170.us-east-2.compute.amazonaws.com:8080/swagger-ui.html
 
 ### List of REST Endpoints and Explanation
@@ -172,9 +176,9 @@ In any case any of the endpoint fails it outputs an error response instead. The 
 ### Database
 The Database is pre populated with 10 persons for testing purpose, aslo the data can be found from the SQL script file which is placed inside the code repository.
 
-![alt text](https://github.com/isudarsan/friendmanagement/blob/master/Friend_DB.sql)
+![Db Script](https://github.com/isudarsan/friendmanagement/blob/master/Friend_DB.sql)
 
 Below is the simple ER Diagram used for the application.
 
-![alt text](https://github.com/isudarsan/friendmanagement/blob/master/DB_ER_DIAGRAM.bmp)
+![DB Diagram](https://github.com/isudarsan/friendmanagement/blob/master/DB_ER_DIAGRAM.bmp)
 
