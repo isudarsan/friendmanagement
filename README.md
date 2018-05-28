@@ -3,6 +3,11 @@
 This is an application with a need to build its own social network, "Friends Management" is a common requirement which usually starts off simple but can grow in complexity depending on the application's use case.
 Usually, the application compraised of features like "Friend", "Unfriend", "Block", "Receive Updates" etc.
 
+The Application is deployed on AWS - EC2 instance.It can be accessed via the below url and the path for all the api is `/firendsapi`
+http://ec2-18-216-161-170.us-east-2.compute.amazonaws.com:8080
+
+Swagger UI is configured for the app and it is available: http://ec2-18-216-161-170.us-east-2.compute.amazonaws.com:8080/swagger-ui.html
+
 ### List of REST Endpoints and Explanation
 
 1. Returns a list of friends of a person.
