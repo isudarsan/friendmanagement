@@ -165,5 +165,11 @@ In any case any of the endpoint fails it outputs an error response instead. The 
 	```
    
 ### Database
+The Database is pre populated with 10 persons for testing purpose, aslo the data can be found from the SQL script file which is placed inside the code repository.
+
+![alt text](https://github.com/isudarsan/friendmanagement/blob/master/Friend_DB.sql)
+
+Below is the simple ER Diagram used for the application.
+
 ![alt text](https://github.com/isudarsan/friendmanagement/blob/master/DB_ER_DIAGRAM.bmp)
 
