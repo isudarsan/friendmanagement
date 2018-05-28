@@ -164,5 +164,5 @@ In any case any of the endpoint fails it outputs an error response instead. The 
 	```
    
 ### Database
-
+![alt text](https://github.com/isudarsan/friendmanagement/blob/master/DB_ER_DIAGRAM.bmp)
 
