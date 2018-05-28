@@ -25,7 +25,7 @@ Usually, the application compraised of features like "Friend", "Unfriend", "Bloc
 	}
 	```
 	* Defined Errors : 
-	  * 4000 : Occurs when invalid email provided in the request.
+	  * 40000 : Occurs when invalid email provided in the request.
 	  * 40006 : Occurs when the email address in the request is not valid (Not matched with the Regex)
 	  * 40004 : Occurs when the person given by the email does not exist
 	  
@@ -52,7 +52,7 @@ Usually, the application compraised of features like "Friend", "Unfriend", "Bloc
 	}
 	```
 	* Defined Errors : 
-	  * 4000 : Invalid request.
+	  * 40000 : Invalid request.
 	  * 40006 : Request contains emails are invalid
 	  * 40004 : Persons given by the email do not exist
 	  * 40004 : The two email addresses in the input are the same
@@ -75,7 +75,7 @@ Usually, the application compraised of features like "Friend", "Unfriend", "Bloc
 	}
 	```
 	* Defined Errors : 
-	  * 4000 : Invalid request
+	  * 40000 : Invalid request
 	  * 40006 : Request contains emails are invalid
 	  * 40004 : Persons given by the email do not exist
 	  * 40004 : The two email addresses in the input are the same
@@ -98,7 +98,7 @@ Usually, the application compraised of features like "Friend", "Unfriend", "Bloc
 	}
 	```
 	* Defined Errors : 
-	  * 4000 : Invalid request
+	  * 40000 : Invalid request
 	  * 40006 : Request contains emails are invalid
 	  * 40004 : Persons given by the email do not exist
 	  * 40004 : The two email addresses in the input are the same
@@ -121,7 +121,7 @@ Usually, the application compraised of features like "Friend", "Unfriend", "Bloc
 	}
 	```
 	* Defined Errors : 
-	  * 4000 : Invalid request
+	  * 40000 : Invalid request
 	  * 40006 : Request contains emails are invalid
 	  * 40004 : Persons given by the email do not exist
 	  * 40004 : The two email addresses in the input are the same
@@ -148,7 +148,7 @@ Usually, the application compraised of features like "Friend", "Unfriend", "Bloc
 	}
 	```
 	* Defined Errors : 
-	  * 4000 : Invalid request
+	  * 40000 : Invalid request
 	  * 40006 : Request contains emails are invalid
 	  * 40004 : Persons given by the email do not exist
 	  
@@ -159,7 +159,7 @@ In any case any of the endpoint fails it outputs an error response instead. The 
 	```
 	{
 		"success": false,
-		"errorCode": "000",
+		"errorCode": "5000",
 		"message":"Unknown Error"
 	}
 	```
