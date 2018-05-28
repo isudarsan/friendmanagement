@@ -188,5 +188,5 @@ The Database is pre populated with 10 persons for testing purpose, aslo the data
 
 Below is the simple ER Diagram used for the application.
 
-![DB Diagram](https://github.com/isudarsan/friendmanagement/blob/master/DB_ER_DIAGRAM.bmp)
+![DB Diagram](https://github.com/isudarsan/friendmanagement/blob/master/DB_Design.PNG)
 
