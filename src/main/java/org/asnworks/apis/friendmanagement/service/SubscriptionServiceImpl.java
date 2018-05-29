@@ -37,6 +37,10 @@ public class SubscriptionServiceImpl implements SubscriptionService {
 
     }
 
+    /**
+     * @param requestor
+     * @param target This method checks the subscription criteria
+     */
     private void checkSubscriptionCriteria(final String requestor, final String target) {
         LOG.info("Start :: checkSubscriptionCriteria {} {}", requestor, target);
         if (requestor == null || target == null) {
@@ -58,6 +62,11 @@ public class SubscriptionServiceImpl implements SubscriptionService {
 
     }
 
+    /**
+     * @param requestor
+     * @param target
+     * @return Subscription
+     */
     private Subscription createSubscription(final String requestor, final String target) {
         return new Subscription(requestor, target);
     }

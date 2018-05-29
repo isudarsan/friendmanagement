@@ -11,6 +11,9 @@ import org.asnworks.apis.friendmanagement.dto.ToggleSubscriptionDTO;
  */
 public interface SubscriptionService {
 
+    /**
+     * @param toggleSubscriptionDTO
+     */
     void scubscribe(final ToggleSubscriptionDTO toggleSubscriptionDTO);
 
 }

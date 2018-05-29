@@ -124,7 +124,7 @@ public class FriendShipServiceImpl implements FriendShipService {
 
     /**
      * @param invitationDTO
-     * @return
+     * @return Friend
      */
     private Friend createFriend(final InvitationDTO invitationDTO) {
         LOG.info("Start :: createFriend {} {} ", invitationDTO.getFriends().get(0), invitationDTO.getFriends().get(1));
@@ -168,12 +168,17 @@ public class FriendShipServiceImpl implements FriendShipService {
     /**
      * @param personOneFriends
      * @param personTwo
-     * @return
+     * @return boolean Checks a person is already friend with some one
      */
     public boolean checkBothAreAlreadyFriends(final List<String> personOneFriends, final String personTwo) {
         return personOneFriends.contains(personTwo) ? true : false;
     }
 
+    /**
+     * @param personOne
+     * @param personTwo
+     * @return List of common friends for given two persons.
+     */
     private List<String> getCommonFriends(final String personOne, final String personTwo) {
         LOG.info("Start :: getCommonFriends {} {} ", personOne, personTwo);
         List<String> commonFriends = new ArrayList<String>();
@@ -198,7 +203,7 @@ public class FriendShipServiceImpl implements FriendShipService {
      * @param senderSubscribers
      * @param senderBlockers
      * @param extractedMailsFromSenderText
-     * @return
+     * @return List of recipients
      */
     private List<String> buildRecipients(final String sender, final List<String> senderFriends, final List<String> senderSubscribers,
         final List<String> senderBlockers, final List<String> extractedMailsFromSenderText) {
@@ -218,7 +223,7 @@ public class FriendShipServiceImpl implements FriendShipService {
 
     /**
      * @param text
-     * @return
+     * @return List of extracted email
      */
     private List<String> extractMailsFromSenderText(final String text) {
         LOG.info("Start :: extractMailsFromSenderText {}", text);

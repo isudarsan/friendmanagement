@@ -11,8 +11,9 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
+
 /**
- * @author sudambat
+ * @author sudambat JPA Configuration
  */
 @Configuration
 @EnableJpaRepositories(Constants.JPA_REPO_PACKAGE)
@@ -34,7 +35,7 @@ public class JPAConfig {
     String dialect;
 
     /**
-     * @return
+     * @return DriverManagerDataSource
      */
     @Bean(name = "datasource")
     public DriverManagerDataSource getDriverManagerDataSource() {
@@ -48,7 +49,7 @@ public class JPAConfig {
     }
 
     /**
-     * @return
+     * @return LocalContainerEntityManagerFactoryBean
      */
     @Bean(name = "entityManagerFactory")
     public LocalContainerEntityManagerFactoryBean getLocalContainerEntityManagerFactoryBean() {

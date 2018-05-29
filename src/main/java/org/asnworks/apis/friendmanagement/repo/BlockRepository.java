@@ -15,5 +15,9 @@ import org.springframework.data.repository.query.Param;
  */
 public interface BlockRepository extends JpaRepository<Block, Long> {
 
+    /**
+     * @param blockee
+     * @return Blockers for a given blockee
+     */
     List<String> fetchBlockers(@Param("blockee") final String blockee);
 }

@@ -10,7 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.NamedNativeQuery;
 
 /**
- * @author sudambat
+ * @author sudambat Entity for Friend
  */
 @Entity
 @NamedNativeQuery(name = "Friend.fetchFriends",

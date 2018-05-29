@@ -4,7 +4,7 @@
 package org.asnworks.apis.friendmanagement.exceptions;
 
 /**
- * @author sudambat
+ * @author sudambat Base Exception for the Application
  */
 public abstract class BaseException extends RuntimeException {
 

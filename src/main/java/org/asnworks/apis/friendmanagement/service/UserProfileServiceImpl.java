@@ -23,7 +23,7 @@ public class UserProfileServiceImpl implements UserProfileService {
 
     /**
      * @param email
-     * @return
+     * @return UserProfile
      */
     private UserProfile createUserProfile(final String email) {
         return new UserProfile(email);

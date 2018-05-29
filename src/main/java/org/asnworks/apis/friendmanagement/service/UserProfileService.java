@@ -12,6 +12,10 @@ import org.asnworks.apis.friendmanagement.dto.EmailDTO;
  */
 public interface UserProfileService {
 
+    /**
+     * @param emailDTO
+     * @return UserProfile
+     */
     UserProfile signUp(final EmailDTO emailDTO);
 
 

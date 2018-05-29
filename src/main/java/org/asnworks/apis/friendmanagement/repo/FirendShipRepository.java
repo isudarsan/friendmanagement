@@ -15,6 +15,10 @@ import org.springframework.data.repository.query.Param;
  */
 public interface FirendShipRepository extends JpaRepository<Friend, String> {
 
+    /**
+     * @param person
+     * @return List of friends for a person
+     */
     @Query(nativeQuery = true)
     List<String> fetchFriends(@Param("person") final String person);
 }

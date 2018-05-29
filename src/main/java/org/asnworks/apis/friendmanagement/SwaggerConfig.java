@@ -16,13 +16,15 @@ import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 /**
- * @author sudambat
- *
+ * @author sudambat Swagger API Configuration
  */
 @Configuration
 @EnableSwagger2
 public class SwaggerConfig {
 
+    /**
+     * @return Docket
+     */
     @Bean
     public Docket productApi() {
         return new Docket(DocumentationType.SWAGGER_2).select()
@@ -32,6 +34,9 @@ public class SwaggerConfig {
             .apiInfo(metaData());
     }
 
+    /**
+     * @return APIInfo
+     */
     private ApiInfo metaData() {
         ApiInfo apiInfo = new ApiInfo("Friend Management System",
             "REST Api", "1.0",

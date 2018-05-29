@@ -43,7 +43,7 @@ public class BlockServiceImpl implements BlockService {
 
     /**
      * @param requestor
-     * @param target
+     * @param target This method checks the block criteria
      */
     private void checkBlockCriteria(final String requestor, final String target) {
         LOG.info("Start :: checkBlockCriteria {} {}", requestor, target);
@@ -68,7 +68,7 @@ public class BlockServiceImpl implements BlockService {
     /**
      * @param requestor
      * @param target
-     * @return
+     * @return Block
      */
     private Block createBlock(final String requestor, final String target) {
         return new Block(requestor, target);

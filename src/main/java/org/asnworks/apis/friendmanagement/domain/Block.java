@@ -10,7 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.NamedQuery;
 
 /**
- * @author sudambat
+ * @author sudambat Entity for Block
  */
 @Entity
 @NamedQuery(name = "Block.fetchBlockers",

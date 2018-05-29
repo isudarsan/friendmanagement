@@ -6,7 +6,7 @@ package org.asnworks.apis.friendmanagement.exceptions;
 import org.asnworks.apis.friendmanagement.constants.Constants;
 
 /**
- * @author sudambat
+ * @author sudambat This exception occurs when the request contains invalid data
  */
 public class InvalidRequestException extends BaseException {
 

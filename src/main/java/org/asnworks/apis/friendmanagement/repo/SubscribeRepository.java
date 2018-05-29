@@ -15,6 +15,10 @@ import org.springframework.data.repository.query.Param;
  */
 public interface SubscribeRepository extends JpaRepository<Subscription, Long> {
 
+    /**
+     * @param subscribee
+     * @return List of subscribers for given subscribe.
+     */
     List<String> fetchSubscribers(@Param("subscribee") final String subscribee);
 
 }

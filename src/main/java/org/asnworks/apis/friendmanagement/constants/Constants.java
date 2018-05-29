@@ -4,7 +4,7 @@
 package org.asnworks.apis.friendmanagement.constants;
 
 /**
- * @author sudambat
+ * @author sudambat Application Constants
  */
 public class Constants {
 

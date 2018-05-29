@@ -55,6 +55,10 @@ public class FriendsManagementController {
         return new SuccessResponseDTO();
     }
 
+    /**
+     * @param invitationDTO
+     * @return ApiResponseDTO
+     */
     @PostMapping("/friendrequest")
     public ApiResponseDTO createFriendShip(@RequestBody InvitationDTO invitationDTO) {
         try {
@@ -71,6 +75,10 @@ public class FriendsManagementController {
         return new SuccessResponseDTO();
     }
 
+    /**
+     * @param emailDTO
+     * @return ApiResponseDTO
+     */
     @PostMapping("/friends")
     public ApiResponseDTO getFriends(@RequestBody EmailDTO emailDTO) {
         List<String> friendsList = null;
@@ -89,6 +97,10 @@ public class FriendsManagementController {
         return new FriendsResponseDTO(friendsList);
     }
 
+    /**
+     * @param invitationDTO
+     * @return ApiResponseDTO
+     */
     @PostMapping("/commonfriends")
     public ApiResponseDTO getCommonFriends(@RequestBody InvitationDTO invitationDTO) {
         List<String> commonFriendsList = null;
@@ -107,6 +119,10 @@ public class FriendsManagementController {
         return new FriendsResponseDTO(commonFriendsList);
     }
 
+    /**
+     * @param toggleSubscriptionDTO
+     * @return ApiResponseDTO
+     */
     @PostMapping("/subscribe")
     public ApiResponseDTO subscribe(@RequestBody ToggleSubscriptionDTO toggleSubscriptionDTO) {
 
@@ -125,6 +141,10 @@ public class FriendsManagementController {
         return new SuccessResponseDTO();
     }
 
+    /**
+     * @param toggleSubscriptionDTO
+     * @return ApiResponseDTO
+     */
     @PostMapping("/block")
     public ApiResponseDTO block(@RequestBody ToggleSubscriptionDTO toggleSubscriptionDTO) {
 
@@ -143,6 +163,10 @@ public class FriendsManagementController {
         return new SuccessResponseDTO();
     }
 
+    /**
+     * @param reciveUpdateDTO
+     * @return ApiResponseDTO
+     */
     @PostMapping("/sendupdates")
     public ApiResponseDTO postUpdates(@RequestBody ReciveUpdateDTO reciveUpdateDTO) {
         List<String> recipentList = null;

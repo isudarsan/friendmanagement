@@ -6,8 +6,7 @@ package org.asnworks.apis.friendmanagement.exceptions;
 import org.asnworks.apis.friendmanagement.constants.Constants;
 
 /**
- * @author sudambat
- *
+ * @author sudambat This exception occurs when the person is not found in the database.
  */
 public class UserDoesNotExistsException extends BaseException {
 

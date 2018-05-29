@@ -6,8 +6,7 @@ package org.asnworks.apis.friendmanagement.exceptions;
 import org.asnworks.apis.friendmanagement.constants.Constants;
 
 /**
- * @author sudambat
- *
+ * @author sudambat This exception occurs when the friendship is not possible between two persons.
  */
 public class FriendBlockedException extends BaseException {
 

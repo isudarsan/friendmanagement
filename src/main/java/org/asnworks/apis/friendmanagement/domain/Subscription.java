@@ -10,7 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.NamedQuery;
 
 /**
- * @author sudambat
+ * @author sudambat Entity for Subscription
  */
 @Entity
 @NamedQuery(name = "Subscription.fetchSubscribers",

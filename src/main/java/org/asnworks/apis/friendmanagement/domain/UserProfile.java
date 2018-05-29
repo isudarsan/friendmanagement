@@ -7,7 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 
 /**
- * @author sudambat
+ * @author sudambat Entity for UserProfile
  */
 @Entity
 public class UserProfile implements java.io.Serializable {

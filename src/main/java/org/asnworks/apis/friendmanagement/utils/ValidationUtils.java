@@ -19,7 +19,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 /**
- * @author sudambat
+ * @author sudambat Validation utility
  */
 @Component
 public class ValidationUtils {
@@ -31,7 +31,7 @@ public class ValidationUtils {
 
     /**
      * @param personOne
-     * @param personTwo
+     * @param personTwo This method validates friendship criteria.
      */
     public void validateFriendShipCriteria(final String personOne, final String personTwo) {
         LOG.info("Start :: validateFriendShipCriteria :: {} {}", personOne, personTwo);
@@ -78,7 +78,7 @@ public class ValidationUtils {
 
     /**
      * @param email
-     * @return
+     * @return boolean
      */
     public boolean isValidEmail(final String email) {
         LOG.info("Start :: isValidEmail :: {}", email);
