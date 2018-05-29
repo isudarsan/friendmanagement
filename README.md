@@ -3,6 +3,24 @@
 This is an application with a need to build its own social network, "Friends Management" is a common requirement which usually starts off simple but can grow in complexity depending on the application's use case.
 Usually, the application compraised of features like "Friend", "Unfriend", "Block", "Receive Updates" etc.
 
+## Technology Choice
+
+### Spring Boot
+1. Spring Boot allows easy setup of standalone Spring-based applications. 
+2. Ideal for spinning up microservices and easy to deploy. 
+3. Makes data access less of a pain, i.e. JPA mappings through Spring Data. 
+
+### Swagger
+1. Swagger is a framework for describing API using a common language that everyone can understand. 
+2. The Swagger spec standardizes API practices, how to define parameters, paths, responses, models, etc.
+
+### AWS
+1. The Free Tier; which provides enough credit to run an EC2 micro instance 24/7 all month.
+2. It comes with S3 storage, EC2 compute hours, Elastic Load Balancer time, and much more. 
+3. This gives a chance to try out AWS in our software
+
+## Deployment to AWS-EC2
+
 The Application is deployed on AWS - EC2 instance.It can be accessed via the below url and the path for all the api is `/firendsapi`
 http://ec2-18-216-161-170.us-east-2.compute.amazonaws.com:8080
 
@@ -12,15 +30,13 @@ http://ec2-18-216-161-170.us-east-2.compute.amazonaws.com:8080/firendsapi/friend
 
 Swagger UI is configured for the app and it is available: http://ec2-18-216-161-170.us-east-2.compute.amazonaws.com:8080/swagger-ui.html
 
-### Deployment to AWS-EC2
-
 Jenkins is configured on EC2 to build and deploy snapshots for the friendmanagement micro service.Trigger the below job so that it will automatically deploy and run the microservice on EC2.
 
 http://ec2-18-216-161-170.us-east-2.compute.amazonaws.com:9090/job/RELEASE_FRIEND_MGMT/
 
 Credentials : sudarsan/cg@123
 
-### List of REST Endpoints and Explanation
+## List of REST Endpoints and Explanation
 
 1. Returns a list of friends of a person.
    * Path : `/friends`
@@ -181,7 +197,7 @@ In any case any of the endpoint fails it outputs an error response instead. The 
 	}
 	```
    
-### Database
+## Database
 The Database is pre populated with 10 persons for testing purpose, aslo the data can be found from the SQL script file which is placed inside the code repository.
 
 ![Db Script](https://github.com/isudarsan/friendmanagement/blob/master/Friend_DB.sql)
