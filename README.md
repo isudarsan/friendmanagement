@@ -36,6 +36,12 @@ http://ec2-18-216-161-170.us-east-2.compute.amazonaws.com:9090/job/RELEASE_FRIEN
 
 Credentials : sudarsan/cg@123
 
+## Spring Boot Admin for monitoring
+
+Configured spring boot admin for application monitoring, available at : http://ec2-18-216-161-170.us-east-2.compute.amazonaws.com:8093
+
+![DB Diagram](https://github.com/isudarsan/friendmanagement/blob/master/SpringBoot_Admin.PNG)
+
 ## List of REST Endpoints and Explanation
 
 1. Returns a list of friends of a person.
