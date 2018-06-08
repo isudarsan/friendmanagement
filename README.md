@@ -244,5 +244,4 @@ Below is the simple ER Diagram used for the application.
 ![DB Diagram](https://github.com/isudarsan/friendmanagement/blob/master/DB_Design.PNG)
 
 @mentions (https://docs.docker.com/) 
-
           (https://spring.io/guides/gs/spring-boot-docker/)
