@@ -36,6 +36,33 @@ http://ec2-18-216-161-170.us-east-2.compute.amazonaws.com:9090/job/RELEASE_FRIEN
 
 Credentials : sudarsan/cg@123
 
+### Deployment using Docker
+
+First step is to run MySQL in Docker container, use below command.
+
+`docker run --name mysql-friend-management-containar -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=friend_management -e MYSQL_USER=zarvis -e MYSQL_PASSWORD=password -d mysql:5.6`
+
+1. `name` mysql-friend-management-containar to assign a name to the container.
+2. `-e` to pass environment variables to the container, and create a `friend_management` database with a user username and password.         This user will be granted superuser permissions for the `friend_management` database.
+3. `-p 3306:3306` to expose MySQL port to the local host.
+4. `-d` to tell Docker to daemonize the container and keep it running.mysql:5.6 to download MySQL 5.6 Server image from Docker public        repo if not in your computer yet.
+
+Now that we have defined the Dockerfile, build a docker image for our application. Type the following command from the root directory of the project to build the docker image
+
+`$ docker build -t friendmanagement .`
+
+Once we have a docker image, run and link with MySQL database container which we already create below command.
+
+`$ docker run -p 8080:8080 --name friendmanagement --link mysql-friend-management-containar -d friendmanagement`
+
+After that check the logs to make sure Server is running OK
+
+`$ docker logs friendmanagement`
+
+The application Docker image is also available in Docker Hub : https://hub.docker.com/r/isudarsan/zarvis-apps/tags/
+
+Image can be pulled directly from Docker Hub using `docker pull isudarsan/zarvis-apps:friendmanagement-0.0.1-SNAPSHOT`
+
 ### Note : Since the application deployed on AWS-Free Tier, the URLs might not work always :)
 
 ## Spring Boot Admin for monitoring
