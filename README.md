@@ -36,11 +36,15 @@ http://ec2-18-216-161-170.us-east-2.compute.amazonaws.com:9090/job/RELEASE_FRIEN
 
 Credentials : sudarsan/cg@123
 
+### Note : Since the application deployed on AWS-Free Tier, the URLs might not work always :)
+
 ## Spring Boot Admin for monitoring
 
-Configured spring boot admin for application monitoring, available at : http://ec2-18-216-161-170.us-east-2.compute.amazonaws.com:8093
+Configured spring boot admin for application monitoring, available at : http://http://ec2-18-188-249-225.us-east-2.compute.amazonaws.com:8093
 
 ![DB Diagram](https://github.com/isudarsan/friendmanagement/blob/master/SpringBoot_Admin.PNG)
+
+![DB Diagram](https://github.com/isudarsan/friendmanagement/blob/master/Spring%20Boot%20Admin.PNG)
 
 ## List of REST Endpoints and Explanation
 
