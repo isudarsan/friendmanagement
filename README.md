@@ -1,3 +1,5 @@
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/8df00a97bd944e708622b93707ca1171)](https://www.codacy.com/app/sudarsan.a/friendmanagement?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=isudarsan/friendmanagement&amp;utm_campaign=Badge_Grade)
+
 # Friend Management Api
 
 This is an application with a need to build its own social network, "Friends Management" is a common requirement which usually starts off simple but can grow in complexity depending on the application's use case.
