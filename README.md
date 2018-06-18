@@ -1,4 +1,5 @@
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/8df00a97bd944e708622b93707ca1171)](https://www.codacy.com/app/sudarsan.a/friendmanagement?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=isudarsan/friendmanagement&amp;utm_campaign=Badge_Grade)
+[![Build Status](https://travis-ci.com/isudarsan/friendmanagement.svg?branch=master)](https://travis-ci.com/isudarsan/friendmanagement)
 
 # Friend Management Api
 
