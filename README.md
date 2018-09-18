@@ -3,6 +3,8 @@
 
 # Friend Management Api
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/f935b8d4a9024aa79325fb3f3cd04110)](https://app.codacy.com/app/sudarsan.a/friendmanagement?utm_source=github.com&utm_medium=referral&utm_content=isudarsan/friendmanagement&utm_campaign=badger)
+
 This is an application with a need to build its own social network, "Friends Management" is a common requirement which usually starts off simple but can grow in complexity depending on the application's use case.
 Usually, the application compraised of features like "Friend", "Unfriend", "Block", "Receive Updates" etc.
 
